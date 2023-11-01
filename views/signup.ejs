@@ -1,0 +1,33 @@
+<%- include("../partials/header.ejs") %>
+
+<link rel="stylesheet" href="/signup.css" />
+
+<div class="container">
+  <form action="/views/signup" method="post">
+    <h2>SIGN UP</h2>
+    <label for="email">Email:</label>
+    <input
+      type="text"
+      id="email"
+      name="email"
+      placeholder="Enter a valid email"
+    /><br />
+
+    <label for="username">Username:</label>
+    <input
+      type="text"
+      id="username"
+      name="username"
+      placeholder="Username"
+    /><br />
+    <label for="password">Password:</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      placeholder="Password"
+    /><br /><br />
+    <input type="submit"  value="SIGN-UP" ></a> 
+  </form>
+
+</div>
