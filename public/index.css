@@ -1,6 +1,8 @@
 .shiity {
-  width: 40%;
-  margin: 0 40%;
+  width: 90%;
+  margin: 100px auto;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 .button-link {
@@ -12,7 +14,6 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin: 0 45%;
 }
 
 .button-link:hover {

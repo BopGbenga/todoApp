@@ -16,6 +16,7 @@ const createUser = async ({ email, username, password }) => {
         data: "User already exist",
       };
     }
+
     if (password === username) {
       return {
         status: error,

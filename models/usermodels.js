@@ -5,14 +5,15 @@ const schema = mongoose.Schema;
 const userSchema = new schema({
   email: {
     type: String,
-    required: true,
+    required: [true, "email is required."],
   },
   username: {
     type: String,
+    required: [true, "username is required."],
   },
   password: {
     type: String,
-    required: true,
+    required: [true, "Password is required."],
   },
 });
 //before save

@@ -40,7 +40,7 @@ app.get("/home", (req, res) => {
 });
 
 app.get("/signup", (req, res) => {
-  res.render("signup", { navs: ["Login", "Home"] });
+  res.render("signup", { navs: ["Login", "Home"] || null, errorMessage: null });
 });
 
 app.get("/login", (req, res) => {
@@ -49,8 +49,6 @@ app.get("/login", (req, res) => {
 
 app.get("/dashboard", auth.ensureLogin, async (req, res) => {
   const taskInfo = await taskModel.find({ user_id: res.locals.user._id });
-  console.log(taskInfo);
-  console.log(res.locals.user);
   res.render("dashboard", {
     navs: ["AddTask", "Logout", "Home"],
     user: res.locals.user,

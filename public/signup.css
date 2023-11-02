@@ -19,6 +19,7 @@ label {
   margin-top: 10px;
 }
 
+input[type="email"],
 input[type="text"],
 input[type="password"] {
   width: 100%;
@@ -37,4 +38,8 @@ input[type="submit"] {
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
+}
+
+.error-message {
+  color: red;
 }

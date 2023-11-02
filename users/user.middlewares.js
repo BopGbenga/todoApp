@@ -5,7 +5,7 @@ const validateUser = async (req, res, next) => {
     const userSchema = joi.object({
       email: joi.string().email().required(),
       username: joi.string().required(),
-      password: joi.string().required(),
+      password: joi.string().required().required(),
     });
 
     await userSchema.validateAsync(req.body, { abortEarly: true });
