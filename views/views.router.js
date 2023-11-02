@@ -1,21 +1,29 @@
 const express = require("express");
 const controllers = require("../users/users.controllers");
+const middlewares = require("../users/user.middlewares");
 
 const router = express.Router();
 
-router.post("/signup", async (req, res) => {
+router.post("/signup", middlewares.validateUser, async (req, res) => {
   const response = await controllers.createUser({
     email: req.body.email,
     username: req.body.username,
     password: req.body.password,
   });
+  if (response.code === 422) {
+    const errorMessage = "User already exixts";
+    res.render("signup", {
+      errorMessage: errorMessage,
+      navs: ["Login", "Home"],
+    });
+  }
 
   if (response.code === 201) {
     res.redirect("/login");
   }
 });
 
-router.post("/login", async (req, res) => {
+router.post("/login", middlewares.loginUser, async (req, res) => {
   const response = await controllers.login({
     username: req.body.username,
     password: req.body.password,

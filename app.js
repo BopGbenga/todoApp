@@ -66,6 +66,23 @@ app.get("/AddTask", auth.ensureLogin, (req, res) => {
   res.render("AddTask", { navs: ["Dashboard", "Logout"] });
 });
 
+app.get("*", (req, res) => {
+  res.render("404");
+});
+app.get("/test-error", (req, res, next) => {
+  // Intentionally throw an error
+  throw new Error("This is a test error");
+});
+
+//gloabal error
+app.use((err, req, res, next) => {
+  console.log(err.stack);
+  res.status(500).json({
+    data: null,
+    error: "service error",
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`server started successsfully `);
 });

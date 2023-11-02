@@ -4,6 +4,9 @@
 
 <div class="container">
   <form action="/views/signup" method="post">
+    <% if (errorMessage) { %>
+      <p class="error-message"><%= errorMessage %></p>
+    <% } %>
     <h2>SIGN UP</h2>
     <label for="email">Email:</label>
     <input

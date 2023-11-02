@@ -8,6 +8,6 @@
 <%-include("../partials/header.ejs")-%>
 <form action="/task/create " method="post">
   <label for="task_name"> ADD A NEW TASK</label>
-  <input type="text" name="task_name" />
+  <input type="text" name="task_name" required />
   <button type="submit" class="submit">SUBMIT</button>
 </form>
