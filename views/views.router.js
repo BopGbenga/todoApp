@@ -3,10 +3,6 @@ const controllers = require("../users/users.controllers");
 
 const router = express.Router();
 
-router.get("/home", (req, res) => {
-  res.render("index");
-});
-
 router.post("/signup", async (req, res) => {
   const response = await controllers.createUser({
     email: req.body.email,

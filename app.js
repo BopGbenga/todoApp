@@ -31,6 +31,10 @@ app.use(overRide("_method"));
 app.use("/users", userRouter);
 app.use("/task", auth.ensureLogin, taskRouter);
 
+app.get("/", (req, res) => {
+  res.render("index", { navs: ["Signup", "Login", "Home"] });
+});
+
 app.get("/home", (req, res) => {
   res.render("index", { navs: ["Signup", "Login", "Home"] });
 });

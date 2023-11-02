@@ -1,19 +1,15 @@
 <link rel="stylesheet" href="/dashboard.css" />
-<!-- <link rel="stylesheet" href="/tasks.css" /> -->
 
-<% if (user) { %>
-<h1>Welcome <span><%= user.username %></span></h1>
 
 <nav>
   <ul>
-    <!-- <% navs.forEach(nav => { %>
-    <li>
-      <a href="/create_task"><%= nav %></a>
-    </li>
-    <% }); %>
-  </ul> -->
+   
   <%-include("../partials/header.ejs")-%>
 </nav>
+<% if (user) { %>
+ 
+<h1>Welcome <span><%= user.username %></span></h1>
+
 <table>
   <tr>
     <th>Title</th>
