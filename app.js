@@ -66,12 +66,12 @@ app.get("/AddTask", auth.ensureLogin, (req, res) => {
   res.render("AddTask", { navs: ["Dashboard", "Logout"] });
 });
 
+app.get("/about", (req, res) => {
+  res.render("/About", { navs: ["login,signup,Home"] });
+});
+
 app.get("*", (req, res) => {
   res.render("404");
-});
-app.get("/test-error", (req, res, next) => {
-  // Intentionally throw an error
-  throw new Error("This is a test error");
 });
 
 //gloabal error

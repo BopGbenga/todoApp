@@ -47,7 +47,7 @@ const updateTask = async (user_id, taskId) => {
   try {
     const tasks = await taskModel.findByIdAndUpdate(
       { _id: taskId },
-      { state: "completed" }
+      { state: "COMPLETED" }
     );
     if (!tasks) {
       return {
