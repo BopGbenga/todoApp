@@ -29,14 +29,13 @@ router.post("/login", middlewares.loginUser, async (req, res) => {
     password: req.body.password,
   });
 
-  if (response.code === 422) {
+  if (response.code === 422 || response.code === 400) {
     const errorMessage = "Incorrect username or password";
     res.render("login", {
       errorMessage: errorMessage,
       navs: ["Signup", "Home"],
     });
-  }
-  if (response.code === 200) {
+  } else if (response.code === 200) {
     res.cookie("jwt", response.token, { maxAge: 60 * 60 * 1000 });
     res.redirect("/dashboard");
   }

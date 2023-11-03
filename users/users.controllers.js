@@ -51,8 +51,8 @@ const login = async ({ username, password }) => {
 
   if (!user) {
     return {
-      status: 400,
-      message: "user no found",
+      code: 400,
+      message: "user not found",
     };
   }
 
